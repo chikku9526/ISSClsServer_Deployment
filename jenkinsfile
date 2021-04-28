@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     sh "ls -ltr"
-			sh "set +x; git clone https://${GIT_USERNAME}:${PASSWORD}@${DEPLOYMENT_URL}; set -x "
+		    sh "set +x; git clone https://${GIT_USERNAME}:${PASSWORD}@${DEPLOYMENT_URL}; set -x "
                     sh "ls -ltr"
 		    sh "cd ${PROJECT_NAME_DEPLOY}"
 		    sh "ls -ltr"
