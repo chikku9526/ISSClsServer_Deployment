@@ -25,8 +25,9 @@ pipeline {
 			"""
 		    }
 		   	sh """
+				cat "${PROJECT_NAME_DEPLOY}/${FileName}-${params.DESTINATION}-deployment"
 				git add -A
-                		git commit -m " Pushed Repo setup files to branches on \$(date) "
+                		git commit --author="chikkujacob5@gmail.com <>" -m " Pushed Repo setup files to branches on \$(date) "
                 		set +x
                 		git push https://${GIT_USERNAME}:${PASSWORD}@${DEPLOYMENT_URL} > /dev/null 2>&1
                 		set -x
