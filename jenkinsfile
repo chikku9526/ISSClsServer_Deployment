@@ -29,9 +29,8 @@ pipeline {
                 		set +x
                 		git push https://${GIT_USERNAME}:${PASSWORD}@${DEPLOYMENT_URL} > /dev/null 2>&1
                 		set -x
-						
-                }
+		}
             }
         }
-}
+	}
 }
