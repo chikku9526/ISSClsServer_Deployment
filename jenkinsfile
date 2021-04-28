@@ -12,18 +12,15 @@ pipeline {
         stage("update server name") {
             steps {
                 script {
-		    sh "cd /root"
                     sh "ls -ltr"
 		    sh "rm -rf *"
 		    sh "set +x; git clone https://${GIT_USERNAME}:${PASSWORD}@${DEPLOYMENT_URL}; set -x "
                     sh "ls -ltr"
-		    sh "cd ${PROJECT_NAME_DEPLOY}"
-		    sh "ls -ltr"
 		    for (String dest : params.SERVERS.split("\n")) {
 			sh """
-				sed -i "7 i <destination id="DEST.ground.chikku.com" hostAndDirectory="DEST.ground.chikku.com:/app/localstorage/SCREEN" setId="Set1"></destination>" "${FileName}-${params.DESTINATION}-deployment"
-				sed -i "s|DEST|$dest|g" "${FileName}-${params.DESTINATION}-deployment"
-				sed -i "s|SCREEN|$screeName|g" "${FileName}-${params.DESTINATION}-deployment"
+				sed -i "7 i <destination id="DEST.ground.chikku.com" hostAndDirectory="DEST.ground.chikku.com:/app/localstorage/SCREEN" setId="Set1"></destination>" "${PROJECT_NAME_DEPLOY}/${FileName}-${params.DESTINATION}-deployment"
+				sed -i "s|DEST|$dest|g" "${PROJECT_NAME_DEPLOY}/${FileName}-${params.DESTINATION}-deployment"
+				sed -i "s|SCREEN|$screeName|g" "${PROJECT_NAME_DEPLOY}/${FileName}-${params.DESTINATION}-deployment"
 			"""
 		    }
 		   	sh """
