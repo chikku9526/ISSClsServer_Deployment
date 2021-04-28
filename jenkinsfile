@@ -6,7 +6,7 @@ pipeline {
 		def FileName = "issclsserver"
 		def screeName = "dmt"
 		GIT_USERNAME="chikkujacob5@gmail.com"
-		PASSWORD=Chikku@9526
+		PASSWORD="Chikku@9526"
 	}
   stages {
         stage("update server name") {
