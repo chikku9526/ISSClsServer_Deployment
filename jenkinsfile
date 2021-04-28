@@ -20,7 +20,7 @@ pipeline {
 		    sh "ls -ltr"
 		    for (String dest : params.SERVERS.split("\n")) {
 			sh """
-				sed -i '7 i <destination id="DEST.ground.chikku.com" hostAndDirectory="DEST.ground.chikku.com:/app/localstorage/SCREEN" setId="Set1"></destination>'
+				sed -i "7 i <destination id="DEST.ground.chikku.com" hostAndDirectory="DEST.ground.chikku.com:/app/localstorage/SCREEN" setId="Set1"></destination>" "${FileName}-${params.DESTINATION}-deployment.xml"
 				sed -i "s|DEST|$dest|g" "${FileName}-${params.DESTINATION}-deployment.xml"
 				sed -i "s|SCREEN|$screeName|g" "${FileName}-${params.DESTINATION}-deployment.xml"
 			"""
