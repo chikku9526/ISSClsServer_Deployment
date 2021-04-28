@@ -8,7 +8,6 @@ pipeline {
 		
 		
 	}
-	
   stages {
         stage("update server name") {
             steps {
@@ -36,4 +35,4 @@ pipeline {
                 }
             }
         }
-    }
+	}
