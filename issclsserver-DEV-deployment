@@ -4,5 +4,7 @@ ad
 asda
 da
 da
+<destination id=iss2ldev4.ground.chikku.com hostAndDirectory=iss2ldev4.ground.chikku.com:/app/localstorage/dmt setId=Set1></destination>
+<destination id=iss2ldev3.ground.chikku.com hostAndDirectory=iss2ldev3.ground.chikku.com:/app/localstorage/dmt setId=Set1></destination>
 d
 ad
