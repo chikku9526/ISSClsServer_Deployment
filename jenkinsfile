@@ -5,8 +5,8 @@ pipeline {
 		def DEPLOYMENT_URL = "github.com/chikku9526/ISSClsServer_Deployment.git"
 		def FileName = "issclsserver"
 		def screeName = "dmt"
-		GIT_USERNAME="chikkujacob5@gmail.com"
-		PASSWORD="Chikku@9526"
+		GIT_USERNAME="chikku9526"
+		PASSWORD="Chikku9526"
 	}
   stages {
         stage("update server name") {
