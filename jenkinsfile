@@ -12,6 +12,7 @@ pipeline {
         stage("update server name") {
             steps {
                 script {
+		    sh "cd /root"
                     sh "ls -ltr"
 		    sh "rm -rf *"
 		    sh "set +x; git clone https://${GIT_USERNAME}:${PASSWORD}@${DEPLOYMENT_URL}; set -x "
